@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <title>Form SignUp</title>
+     <link rel="stylesheet" href="c:/Globant/css/formSignUp.css">
+ </head>
+ 
+ 
+ <body>
+     
+        <div id="principal">
+           
+            <form  method="POST" id="contactForm"  >
+             <div id="contentForm"> 
+               <h3 id="headText">Contact Form</h3>
+               <label > First Name</label>
+               <input type="text" name="firstName" id="fName" required placeholder="name"><br><br>  
+               
+            
+               <label > Last Name</label>
+               <input type="text" name="lastName" id="lName" required placeholder="LastName"><br><br>   
+               
+               <label > email</label>
+               <input type="email" name="email" id="email" required placeholder="email"><br><br>   
+              
+               <label >Birthday</label>
+               <input type="date" name="date" id="date" required placeholder="birthday"><br><br>   
+              
+               <label >Sports</label>
+                   <select id="sports">
+                       <option value="tennis"> Tennis</option>
+                       <option value="football" selected>football</option>
+                       <option value="running">Running</option>
+                   </select><br><br> 
+                
+               
+               <label >Biography</label><br>   
+               <textarea rows="6" cols="60" name="bio" id="bio" required>
+               
+               </textarea><br><br>
+                
+               <input type="reset" value="Clear" >
+               <input type="submit" value="Enviar">
+            </div>  
+           </form>
+          
+        </div>
+       
+        
+ </body>
+
+
+</html>

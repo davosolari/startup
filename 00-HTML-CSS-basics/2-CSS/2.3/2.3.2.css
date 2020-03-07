@@ -118,12 +118,11 @@ nav li
 .sidebar{
   font-size: 12px;
 }
-/*
-.sidebar{
-  font-size: 12px;
-}*/
 
 
+[class$="r"] {
+  background-color:magenta;
+}
 
 footer
 {

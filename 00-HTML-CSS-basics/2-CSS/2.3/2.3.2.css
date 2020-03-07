@@ -129,7 +129,10 @@ nav li
   background-color:blue;
 }
 
-
+.oh-no-inline-styles{
+  color: green !important;
+  
+}
 
 
 

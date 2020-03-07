@@ -1,8 +1,8 @@
 *
 {
   color: #fff;
-  font-size: 28px;
-  font-weight: 300;
+ /* font-size: 28px;
+  font-weight: 300;*/
   box-sizing: border-box;
   
 }
@@ -47,7 +47,7 @@ nav,
 aside
 {
   width: 25%;
-  height: 445px;
+  height: 250px;
 }
 
 section
@@ -104,21 +104,25 @@ nav li
  font-size: 46px;
 }
 
-.footer{
+.footer {
+
+  font-size: 10px;
 
 }
-
 .content{
-
+  font-size: 14px;
 }
 
-.navigation{
 
-}
-
+.navigation,
 .sidebar{
-
+  font-size: 12px;
 }
+/*
+.sidebar{
+  font-size: 12px;
+}*/
+
 
 
 footer

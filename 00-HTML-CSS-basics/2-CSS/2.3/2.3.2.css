@@ -124,6 +124,15 @@ nav li
   background-color:magenta;
 }
 
+
+[class*="a"]:not([class$="r"]) {
+  background-color:blue;
+}
+
+
+
+
+
 footer
 {
   clear: both;

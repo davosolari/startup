@@ -8,6 +8,14 @@ section{
     text-align: center;
 }
 
+.sectionHidden{
+    background-color: darkblue;
+    height:200px;
+}
+
+#hiddenSection{
+    visibility: hidden;
+}
 #container{
     width: 960px;
     height:900px;
@@ -42,16 +50,11 @@ section{
 }
 
 
-#hiddenSection{
-    visibility: hidden;
-}
-#helloWorld{
+#hi{
     height: 200px;
     background-color: rgb(241, 18, 36);
 }
-.esconder{
-    display: none;
-}
+
 
 article{
     height: 150px;

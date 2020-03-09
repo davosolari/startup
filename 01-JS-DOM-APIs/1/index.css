@@ -16,7 +16,7 @@ section{
 }
 #mainHeader{
     width: auto;
-    height: 150px;
+    height: 100px;
     background-color: royalblue;
 }
 
@@ -33,21 +33,28 @@ section{
     background-color: yellowgreen;
 }
 #sportSection{
-    float: left;
-    width: 700px;
-    height: 550px;
+    vertical-align: top;
+   
+    width: auto;
+    height: 350px;
     background-color: rgb(81, 23, 241);
  
 }
-aside{
-    background-color: violet;
-    height: 550px;
-    margin-bottom: 2px;
-    
+
+
+#hiddenSection{
+    visibility: hidden;
+}
+#helloWorld{
+    height: 200px;
+    background-color: rgb(241, 18, 36);
+}
+.esconder{
+    display: none;
 }
 
 article{
-    height: 250px;
+    height: 150px;
     background-color: blueviolet;
     margin-top: 7px;
 }

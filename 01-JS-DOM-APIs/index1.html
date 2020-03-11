@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+ <head>
+ <style>
+  section{
+      text-align: center;    
+  } 
+  .fading-text{
+      display: none;
+      
+  }
+
+ </style>
+
+
+
+ </head>
+ 
+ <body>
+
+    <section id="greeting" class="fading-text">
+        <h3> Hello World</h3>
+    </section>  
+
+    </div>  
+
+    
+<script>
+
+ function fadeIn(element){
+     var opacidad = 0.1;
+     element.style.display = "block";
+
+     var timer = setInterval(function(){ 
+      if(opacidad >= 1)
+      {
+        clearInterval(timer);
+      }
+      element.style.opacity = opacidad;
+      opacidad += opacidad * 0.1;
+     },50);
+
+
+ }
+
+ 
+ (function(){
+  fadeIn(document.getElementById("greeting"));
+ })();
+
+</script>
+
+</body>
+
+</html>

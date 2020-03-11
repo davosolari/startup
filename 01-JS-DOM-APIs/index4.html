@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+<head>
+<style>
+
+        .repos-wrapper{
+            float:right;
+            border: 1px solid black;
+        }
+
+        #search-repo-text{
+            margin-left: 1em;
+            margin-top: 1em;
+
+        }
+
+        #search-repo{
+            margin-right: 1em;
+        }
+
+</style>
+
+</head>
+ 
+<body>
+
+    <div class="repos-wrapper">
+        <input id="search-repo-text" type="text" />
+        <button id="search-repo">Search Repo</button>
+        <ul id="repos"></ul>
+    </div>
+
+<script>
+
+function fetchRepo(){
+
+    var searchTerm = document.getElementById("search-repo-text").value;
+
+    fetch("https://api.github.com/search/repositories?q=" + searchTerm)
+
+        .then(
+            function(response){
+
+                if( response.status!=200){
+
+                    showError("something happened on the server" + response.status);
+
+                    return false;
+                }
+
+
+                response.json()
+                    .then(
+                        function(data){
+
+                            document.getElementById("repos").innerHTML = "";
+
+                            var items = data.items;
+
+                            for(var i=0; i<data.items.length; i++){
+
+                                var listItem = document.createElement("li");
+                                var listItemText = document.createTextNode(items[i].name);
+                                listItem.appendChild(listItemText);
+
+                                document.getElementById("repos").appendChild(listItem);
+
+                            }
+
+                            return true;
+
+                        }
+                    );
+
+            }
+
+        )
+                    
+        .catch(
+            function(err){
+
+                showError("something happened on the server" + response.status);
+                return false;
+            }
+
+        );
+
+}
+
+(function () {
+
+document.getElementById("search-repo").addEventListener("click", function(){
+
+    fetchRepo();
+
+});
+
+
+})();
+</script>
+    
+</body>
+
+</html> 

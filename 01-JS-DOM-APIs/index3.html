@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+ <head>
+ <style>
+  section{
+      margin:auto;
+      width: 50%;
+      text-align: center;
+  } 
+  .fading-text{
+      display: none;
+      
+  }
+
+
+
+ </style>
+
+
+
+ </head>
+ 
+<body>
+
+    <section id="sectionJoker">
+        <h3> Hello World</h3>
+    </section>  
+
+    <div class="">
+        <button id="fetching">click</button>
+    </div>  
+
+    
+<script>
+
+function showError(msg){
+    
+    var sectionJoker = document.getElementById("sectionJoker");
+    var textNode = document.createTextNode(msg);
+
+    sectionJoker.innerHTML = "";
+    sectionJoker.appendChild(textNode);
+    sectionJoker.style.color = "red";
+}
+
+(function(){
+ document.getElementById("fetching").addEventListener("click",fetchApi);
+})();   
+
+function fetchApi(){
+
+    fetch("http://api.icndb.com/jokes/random")
+    //fetch("http://localhost/hh")
+    .then(
+     function(response){
+        if(response.status != 200){
+           //console.log(response.status);
+           showError("something happened on the server" + response.status);
+            
+           //Retornar e interrumpir el script 
+           return false;
+        }
+
+        response.json()
+        .then(
+            function(data){
+            var sectionJoke = document.getElementById("sectionJoker");
+            var par = document.createElement("p");
+            var deco = document.createElement("textarea")
+            deco.innerHTML = data.value.joke;
+
+            par.appendChild(document.createTextNode(deco.value));
+            sectionJoke.replaceChild(par, sectionJoke.children[0]);
+
+            sectionJoker.style.color = "black";
+             
+            }
+        )
+
+        .catch(
+            function(err){
+                showError(err.message)
+            }
+        );
+
+     }
+    )
+    .catch(
+        function(err){
+            showError(err.message)
+        }
+
+    );
+}
+
+ 
+</script>
+
+
+</body>
+
+</html>

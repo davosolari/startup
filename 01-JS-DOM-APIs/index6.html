@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Table </title>
+    <style>
+        section {
+            margin: auto;
+            text-align: center;
+            width:30%;
+
+            height:5em;
+        }
+        table{
+            text-align: center;
+            margin:auto;
+            border:1px solid black;
+        }
+        td{
+            border:1px dotted #999999;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section id="matrix-to-table" class="matrix-to-table">
+        <textarea id="matrix" rows="10">
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+        </textarea>
+        <br/>
+        <button id="create-table">Create Table</button>
+        <div id="result-table"></div>
+    </section>
+
+    <script>
+        function matrixToTable(rows){
+
+            var resultTable = document.getElementById("result-table");
+            resultTable.innerHTML = "";
+
+            var table = document.createElement("table")
+
+            for (var i=0; i<rows.length; i++){
+
+                var dataRow = rows[i];
+
+                var dataColumns = dataRow.split(" ");
+
+                var tableRow = document.createElement("tr")
+
+                for(var j=0; j<dataColumns.length; j++){
+
+                    var tableColumn = document.createElement("td")
+                    tableColumn.appendChild(document.createTextNode(dataColumns[j]));
+
+                    tableRow.appendChild( tableColumn );
+                }
+
+                table.appendChild(tableRow);
+
+            }
+
+            resultTable.appendChild(table)
+
+        }
+
+        (function() {
+    
+            document.getElementById("create-table").addEventListener("click", function(){
+
+                var inputData = document.getElementById("matrix").value.trim().split(/\n/);
+                matrixToTable(inputData);
+
+            });
+
+        })();
+    </script>

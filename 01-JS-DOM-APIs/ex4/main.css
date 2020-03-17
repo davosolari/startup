@@ -1,0 +1,13 @@
+.repos-wrapper{
+    float:right;
+    border: 1px solid black;
+}
+
+#search-repo-text{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+#search-repo{
+    margin-right: 1em;
+}

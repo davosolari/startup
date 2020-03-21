@@ -1,0 +1,9 @@
+#lienzo{
+    background-color: rgb(226, 25, 25);
+
+}
+section{
+    width: 500px;
+    position: relative;
+    margin:auto
+}

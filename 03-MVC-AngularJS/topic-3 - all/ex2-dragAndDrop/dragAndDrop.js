@@ -1,5 +1,5 @@
 
-(function(){
+(()=>{
   holder = document.getElementById('holder'),
   state = document.getElementById('status');
   window.addEventListener("load",loader,false);
@@ -9,28 +9,28 @@
         if (typeof window.FileReader === 'undefined') {
            state.className = 'fail';
         }else{
-           state.className = 'success';
-           state.innerHTML = 'File API & FileReader available';
-        }
+              state.className = 'success';
+              state.innerHTML = 'File API & FileReader available';
+          }
       
-        holder.ondragover = function() {
-          this.className = 'hover';
-          return false;
+        holder.ondragover = () => {
+              this.className = 'hover';
+              return false;
         }
-        holder.ondragend = function() {
-          this.className = '';
-          return false;
+        holder.ondragend = () => {
+              this.className = '';
+              return false;
         }
-        holder.ondrop = function(e) {
-          this.className = '';
-          e.preventDefault();
+        holder.ondrop = (e) => {
+              this.className = '';
+              e.preventDefault();
         
-        var file = e.dataTransfer.files[0],
+        const file = e.dataTransfer.files[0],
             reader = new FileReader();
-        reader.onload = function(event) {
-            console.log(event.target);
-            holder.innerText = event.target.result;
-        }
+            reader.onload = (event) => {
+               console.log(event.target);
+               holder.innerText = event.target.result;
+            }
         
         console.log(file);
         reader.readAsText(file);

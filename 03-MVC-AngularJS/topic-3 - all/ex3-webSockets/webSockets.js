@@ -4,26 +4,26 @@
 })();
 
 function start(){
-    ws.onopen = function () {
+    ws.onopen = () => {
       ws.send("Connected");
     }
     
     
-    ws.onerror = function (error) {
+    ws.onerror = (error) => {
       console.log('Error: ' + error);
     }
     
     
-    ws.onmessage = function (e) {
-      let box = document.getElementById('msgView');
-      let msgNode = document.createTextNode(e.data);
-      let paragraph = document.createElement('p');
+    ws.onmessage = (e) => {
+      const box = document.getElementById('msgView');
+      const msgNode = document.createTextNode(e.data);
+      const paragraph = document.createElement('p');
       paragraph.appendChild(msgNode);
       box.appendChild(paragraph);
     }
     
     function sendMsg(){
-      let msg = document.getElementById('msgBox').value;
+      const msg = document.getElementById('msgBox').value;
       ws.send(msg);
     }
 }    

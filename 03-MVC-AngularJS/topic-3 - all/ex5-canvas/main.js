@@ -1,10 +1,10 @@
 window.addEventListener("load",start,false);
 
 function start(){
-    var elementoLienzo = document.getElementById("lienzo");
+    const elementCanva = document.getElementById("canva");
     
-    lienzo = elementoLienzo.getContext("2d");
-    lienzo.fillRect(100,70,200,200);
+    canva = elementCanva.getContext("2d");
+    canva.fillRect(100,70,200,200);
     
     
     //lienzo.fillRect= "#FF475D";

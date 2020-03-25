@@ -5,11 +5,11 @@ let db;
     function start(){
        
         //identify the elements on document.
-        let dataZone = document.getElementById("content");
-        let btn = document.getElementById("btn-save")   
+        const dataZone = document.getElementById("content");
+        const btn = document.getElementById("btn-save")   
         
         //i create the database.
-        let request = indexedDB.open("myDB")    
+        const request = indexedDB.open("myDB")    
         
         //if all it's okay.
         request.onsuccess = obj => {
@@ -24,15 +24,15 @@ let db;
     }
 
     function addObject(){
-        let transaction = db.transaction(["comments"],"readwrite");
-        let store = transaction.objectStore("comments");
-        let add = store.add({content: content.value});
+        const transaction = db.transaction(["comments"],"readwrite");
+        const store = transaction.objectStore("comments");
+        const add = store.add({content: content.value});
     }
     
     function eraseComment(){
-        let transaction = db.transaction(["comments"], "readwrite");
-        var objectStore = transaction.objectStore("comments");
-        var objectStoreRequest = objectStore.clear();
+        const transaction = db.transaction(["comments"], "readwrite");
+        const objectStore = transaction.objectStore("comments");
+        const objectStoreRequest = objectStore.clear();
     }
 
     (function(){

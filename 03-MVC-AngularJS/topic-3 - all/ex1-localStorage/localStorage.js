@@ -1,5 +1,5 @@
     function addComment(){
-        let area = document.getElementById("content").value;
+        const area = document.getElementById("content").value;
         localStorage.setItem("data",area); 
     }
 

@@ -7,13 +7,13 @@ function start(){
     canva.fillRect(100,70,200,200);
     
     
-    //lienzo.fillRect= "#FF475D";
+    //canva.fillRect= "#FF475D";
     
-    //lienzo.fillStyle="#EE120E";
+    //canva.fillStyle="#EE120E";
 
     
 
-    //lienzo.clearRect(130,130,40,50);
+    //canva.clearRect(130,130,40,50);
 
    
  

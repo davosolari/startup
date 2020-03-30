@@ -1,4 +1,4 @@
-
+//agregando anonima pero con arrow
 (()=>{
   holder = document.getElementById('holder'),
   state = document.getElementById('status');

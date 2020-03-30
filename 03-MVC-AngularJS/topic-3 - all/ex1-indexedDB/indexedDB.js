@@ -35,7 +35,8 @@ let db;
         const objectStoreRequest = objectStore.clear();
     }
 
-    (function(){
+    //with arrow function
+    (()=>{
         document.getElementById("btn-save").addEventListener("click",addObject);
         document.getElementById("btn-clear").addEventListener("click",eraseComment);    
     })();
